@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Web\CartController;
+use App\Http\Controllers\Web\OrderController;
+use App\Http\Controllers\Web\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [ProductsController::class, 'index']);
+
+Route::get('cart', [CartController::class, 'index'])->name('cart');
+Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add-to-cart');
+Route::patch('update-cart', [CartController::class, 'update'])->name('update-cart');
+Route::delete('remove-from-cart', [CartController::class, 'remove'])->name('remove-from-cart');
+
+Route::post('place-order', [OrderController::class, 'placeOrder'])->name('order-details');
+Route::get('order-details/{order_id}', [OrderController::class, 'orderDetails'])->name('order-details');
+
