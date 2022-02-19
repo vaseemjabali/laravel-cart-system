@@ -24,7 +24,7 @@ Update the `APP_URL` in the `.env` file as http://127.0.0.1:8000
 
 Run the application using the following command
 
-`php artisan serv`
+`php artisan serve`
 
 Contact
 
