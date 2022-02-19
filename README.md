@@ -18,7 +18,7 @@ Please update your .env file to point to an empty database before running the fo
 
 4. Run the Seeders
 
-`php artisan make:seed ProductsSeeder`
+`php artisan db:seed ProductsSeeder`
 
 Update the `APP_URL` in the `.env` file as http://127.0.0.1:8000
 
